@@ -10,6 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.junit.Before;
 import org.junit.Test;
 
+import framework.TestResult;
 import framework.WasRun;
 
 
@@ -33,6 +34,28 @@ public class TestCaseTest {
 		assertTrue("setUp testMethod tearDown ".equals(test.log));
 	}
 	
+	/**
+	 * Chapter 21. Counting (Test Case)
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 */
+	@Test
+	public void testResult() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+		WasRun test = new WasRun("testMethod");
+		TestResult result = test.run();
+		assertTrue("1 run, 0 failed".equals(result.summary()));
+	}
+	
+//	@Test
+//	public void testFailedResult() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+//		WasRun test = new WasRun("testBrokenMethod");
+//		TestResult result = test.run();
+//		assertTrue("1 run, 1 failed".equals(result.summary()));
+//	}
+//	
 	
 	
 //	/**
@@ -88,6 +111,22 @@ public class TestCaseTest {
 //		this.test.run();
 //		assertTrue(test.wasRun);
 //	}
+	
+//	/**
+//	 * Chapter 20. Cleaning Up After
+//	 * @throws NoSuchMethodException
+//	 * @throws SecurityException
+//	 * @throws IllegalAccessException
+//	 * @throws IllegalArgumentException
+//	 * @throws InvocationTargetException
+//	 */
+//	@Test
+//	public void testTemplateMethodCH20() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+//		WasRun test = new WasRun("testMethod");
+//		test.run();
+//		assertTrue("setUp testMethod tearDown ".equals(test.log));
+//	}
+//	
 
 	
 }
