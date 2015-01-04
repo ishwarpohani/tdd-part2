@@ -1,8 +1,5 @@
 package framework;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
 public class WasRun extends TestCase {
 
 	public boolean wasRun;
